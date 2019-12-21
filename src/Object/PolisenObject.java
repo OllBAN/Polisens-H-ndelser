@@ -21,7 +21,8 @@ public class PolisenObject {
 
     @Override
     public String toString() {
-        return " id: " + id + ",\n datetime: " + datetime + ", name: " + name + ",\n summering: " + summary + ", url: " + url +
-                ", type: " + type + ", location: " + polisenLocation;
+        return " ID: " + id + ",\n Datetime: " + datetime + ", Namn: " + name + ",\n " +
+                "Summering: " + summary + ", URL: " + url + ", \n" +
+                " Typ: " + type + ", Plats: " + polisenLocation;
     }
 }
