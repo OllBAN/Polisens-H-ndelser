@@ -13,9 +13,6 @@ public class PolisenLocation {
 
     @Override
     public String toString() {
-        return "PolisenLocation{" +
-                "name='" + name + '\'' +
-                ", gps='" + gps + '\'' +
-                '}';
+        return " Ortsnamn: " + name + ", GPSKoordinationer: " + gps;
     }
 }

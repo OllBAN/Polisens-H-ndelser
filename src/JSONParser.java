@@ -13,7 +13,6 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class JSONParser {
@@ -68,7 +67,13 @@ public class JSONParser {
             String url = jsonObject.getString("url");
             String type = jsonObject.getString("type");
 
-            PolisenObject polisenObject = new PolisenObject(id, datetime, name, summary, url, type);
+            //Objektet "location" har objekten "name" och "gps" inuti sig.
+            String locationName = jsonObject.getJSONObject("location").getString("name");
+            String gps = jsonObject.getJSONObject("location").getString("gps");
+
+            PolisenLocation polisenLocation = new PolisenLocation(locationName, gps);
+
+            PolisenObject polisenObject = new PolisenObject(id, datetime, name, summary, url, type, polisenLocation);
             System.out.println(polisenObject);
         } catch (JSONException e) {
             e.printStackTrace();
